@@ -1,0 +1,123 @@
+version: '3.8'
+
+services:
+  # Main FastAPI Application
+  phishshield-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: phishshield-api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://phishshield:phishshield123@postgres:5432/phishshield_db
+      - REDIS_URL=redis://redis:6379
+      - SANDBOX_ENABLED=true
+      - ML_MODEL_PATH=/app/models
+    volumes:
+      - ./models:/app/models
+      - ./logs:/app/logs
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - phishshield-network
+    restart: unless-stopped
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: phishshield-postgres
+    environment:
+      - POSTGRES_DB=phishshield_db
+      - POSTGRES_USER=phishshield
+      - POSTGRES_PASSWORD=phishshield123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - phishshield-network
+    restart: unless-stopped
+
+  # Redis for Caching
+  redis:
+    image: redis:7-alpine
+    container_name: phishshield-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - phishshield-network
+    restart: unless-stopped
+
+  # URL Sandbox Service
+  sandbox:
+    build:
+      context: ./sandbox
+      dockerfile: Dockerfile
+    container_name: phishshield-sandbox
+    ports:
+      - "8001:8001"
+    environment:
+      - SANDBOX_TIMEOUT=30
+      - HEADLESS_MODE=true
+    volumes:
+      - ./sandbox/screenshots:/app/screenshots
+      - ./sandbox/reports:/app/reports
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_ADMIN
+    networks:
+      - phishshield-network
+    restart: unless-stopped
+
+  # Neo4j for Network Graph Analysis
+  neo4j:
+    image: neo4j:5.13-community
+    container_name: phishshield-neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=neo4j/phishshield123
+      - NEO4J_PLUGINS=["apoc"]
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    networks:
+      - phishshield-network
+    restart: unless-stopped
+
+  # ML Training Service
+  ml-trainer:
+    build:
+      context: ./ml-trainer
+      dockerfile: Dockerfile
+    container_name: phishshield-ml-trainer
+    environment:
+      - DATABASE_URL=postgresql://phishshield:phishshield123@postgres:5432/phishshield_db
+      - MODEL_OUTPUT_PATH=/app/models
+    volumes:
+      - ./models:/app/models
+      - ./training_data:/app/training_data
+    depends_on:
+      - postgres
+    networks:
+      - phishshield-network
+    restart: "no"
+    profiles:
+      - training
+
+volumes:
+  postgres_data:
+  redis_data:
+  neo4j_data:
+  neo4j_logs:
+
+networks:
+  phishshield-network:
+    driver: bridge
