@@ -457,8 +457,8 @@ Processing: 6ms
 <a href="https://github.com/DSCYBERS/-PhishShield-AI/releases/latest/download/phishshield-ai-v3.2.5.apk">
 <img src="https://img.shields.io/badge/📱_Download_APK-v3.2.5-brightgreen?style=for-the-badge&logo=android&logoColor=white" alt="Download APK"/>
 </a>
-<a href="https://play.google.com/store/apps/details?id=com.phishshieldai.android">
-<img src="https://img.shields.io/badge/Google_Play-Coming_Soon-orange?style=for-the-badge&logo=google-play&logoColor=white" alt="Google Play"/>
+<a href="./releases/v3.2.5/phishshield-ai-v3.2.5.apk">
+<img src="https://img.shields.io/badge/📥_Local_Download-v3.2.5-blue?style=for-the-badge&logo=download&logoColor=white" alt="Local Download"/>
 </a>
 </p>
 
@@ -488,15 +488,18 @@ Processing: 6ms
 curl -L -o phishshield-ai-v3.2.5.apk \
   https://github.com/DSCYBERS/-PhishShield-AI/releases/latest/download/phishshield-ai-v3.2.5.apk
 
+# Alternative: Local download from project
+# Copy from: ./releases/v3.2.5/phishshield-ai-v3.2.5.apk
+
 # Verify SHA256 checksum
 certutil -hashfile phishshield-ai-v3.2.5.apk SHA256
 
-# Expected: 9F2A3B4C5D6E7F8A9B0C1D2E3F4A5B6C7D8E9F0A1B2C3D4E5F6A7B8C9D0E1F2A
+# Expected: 022d5b835026f7d23d70340065039857a11a1b3a5f1b3168f6969ef6c8deb23a
 ```
 
 **Download Options:**
-- 🔗 Direct GitHub Release
-- 🌐 Official Website
+- 🔗 GitHub Release (Recommended)
+- 📁 Local Project File
 - 🔄 Auto-Update (in-app)
 - 📱 QR Code Download
 
@@ -670,7 +673,7 @@ security:
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 🔒 SECURITY HASHES
-SHA256: 9F2A3B4C5D6E7F8A9B0C1D2E3F4A5B6C7D8E9F0A1B2C3D4E5F6A7B8C9D0E1F2A
+SHA256: 022d5b835026f7d23d70340065039857a11a1b3a5f1b3168f6969ef6c8deb23a
 SHA1:   A1B2C3D4E5F6A7B8C9D0E1F2A3B4C5D6E7F8A9B0
 MD5:    1A2B3C4D5E6F7A8B9C0D1E2F3A4B5C6D
 ```
