@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PhishShield AI</string>
+    <string name="protection_active">Protection Active</string>
+    <string name="protection_disabled">Protection Disabled</string>
+    <string name="start_protection">Start Protection</string>
+    <string name="stop_protection">Stop Protection</string>
+    <string name="threats_blocked">Threats Blocked</string>
+    <string name="urls_scanned">URLs Scanned</string>
+    <string name="accessibility_service_required">Accessibility Service Required</string>
+    <string name="accessibility_service_description">PhishShield needs accessibility service to monitor URLs across all apps</string>
+    <string name="vpn_permission_required">VPN Permission Required</string>
+    <string name="vpn_permission_description">PhishShield needs VPN permission to intercept and scan network traffic</string>
+    <string name="phishing_detected_title">⚠️ Phishing Detected!</string>
+    <string name="phishing_detected_message">This URL has been identified as malicious and has been blocked for your safety.</string>
+    <string name="block_url">Block URL</string>
+    <string name="allow_once">Allow Once</string>
+    <string name="always_allow">Always Allow</string>
+    <string name="scan_url">Scan URL</string>
+    <string name="enter_url">Enter URL to scan</string>
+    <string name="scanning">Scanning...</string>
+    <string name="scan_complete">Scan Complete</string>
+    <string name="url_safe">URL appears to be safe</string>
+    <string name="url_suspicious">URL is suspicious</string>
+    <string name="url_malicious">URL is malicious</string>
+    <string name="confidence_score">Confidence: %1$.1f%%</string>
+    <string name="layers_scanned">Layers scanned: %1$s</string>
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand Colors -->
+    <color name="primary">#2196F3</color>
+    <color name="primary_variant">#1976D2</color>
+    <color name="primary_dark">#0D47A1</color>
+    <color name="primary_light">#BBDEFB</color>
+    
+    <!-- Secondary Colors -->
+    <color name="secondary">#03DAC6</color>
+    <color name="secondary_variant">#018786</color>
+    
+    <!-- Background Colors -->
+    <color name="background_primary">#FAFAFA</color>
+    <color name="background_secondary">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#F8F9FA</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    
+    <!-- Threat Level Colors -->
+    <color name="threat_critical">#D32F2F</color>
+    <color name="threat_high">#F57C00</color>
+    <color name="threat_medium">#FBC02D</color>
+    <color name="threat_low">#689F38</color>
+    <color name="safe">#4CAF50</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="error">#F44336</color>
+    <color name="info">#2196F3</color>
+    
+    <!-- Functional Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="divider">#E0E0E0</color>
+    
+    <!-- Threat Category Colors -->
+    <color name="threat_category_bg">#FFE0E0</color>
+    <color name="threat_category_text">#D32F2F</color>
+    
+    <!-- Analysis Layer Colors -->
+    <color name="analysis_layer_bg">#E3F2FD</color>
+    <color name="analysis_layer_text">#1976D2</color>
+    
+    <!-- Legacy Colors (for compatibility) -->
+    <color name="accent">#FFC107</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="safe_green">#4CAF50</color>
+    <color name="warning_orange">#FF9800</color>
+    <color name="danger_red">#F44336</color>
+</resources>
